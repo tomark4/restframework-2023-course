@@ -67,4 +67,28 @@ pipenv run pip uninstall [package_name]
 # borrar el entorno virtual
 
 pipenv --rm
+
+# activar el entorno virtual
+
+pipenv shell
+```
+
+# vs code configuration
+
+```
+{
+    "python.pythonPath": "C:\\ruta\\al\\entorno\\python.exe",   /* Adaptar esta línea */
+    "python.linting.enabled": true,
+    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintEnabled": false,
+    "python.languageServer": "Pylance",
+    "python.linting.pycodestyleEnabled": true,
+    "python.analysis.useImportHeuristic": true,
+    "python.linting.pycodestyleArgs": ["--ignore=E501,E226,E116"],
+    "python.formatting.autopep8Args": ["--max-line-length=200"],
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--disable=django-not-configured,missing-module-docstring,missing-class-docstring"
+    ]
+}
 ```
