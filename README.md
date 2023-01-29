@@ -1,1 +1,6 @@
-# restframework-2023-course
+# Django - Django rest framework curso
+
+Curso de repaso de tecnologias:
+
+- Django
+- Django rest framework
