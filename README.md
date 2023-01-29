@@ -77,18 +77,17 @@ pipenv shell
 
 ```
 {
-    "python.pythonPath": "C:\\ruta\\al\\entorno\\python.exe",   /* Adaptar esta línea */
-    "python.linting.enabled": true,
-    "python.linting.pylintPath": "pylint",
-    "python.linting.pylintEnabled": false,
-    "python.languageServer": "Pylance",
-    "python.linting.pycodestyleEnabled": true,
-    "python.analysis.useImportHeuristic": true,
-    "python.linting.pycodestyleArgs": ["--ignore=E501,E226,E116"],
-    "python.formatting.autopep8Args": ["--max-line-length=200"],
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint_django",
-        "--disable=django-not-configured,missing-module-docstring,missing-class-docstring"
-    ]
+"python.defaultInterpreterPath": "/home/jotta/.local/share/virtualenvs/project1-portfolio-9Et_XDjR/bin/python",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--load-plugins",
+    "pylint_django",
+    "--django-settings-module=example.settings"
+  ]
 }
 ```
+
+Correr django con pipenv en el entorno virtual
+
+`python3 -m pipenv run python  manage.py runserver`

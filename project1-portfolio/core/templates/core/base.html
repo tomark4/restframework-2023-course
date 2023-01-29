@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%block title%}{%endblock%} | Mi web personal</title>
+    <style>
+      .menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .menu li {
+        float: left;
+        margin-left: 10px;
+      }
+
+      .separator {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <ul class="menu">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+    <div style="clear: both"></div>
+    <div class="separator"></div>
+    <!-- Contenido -->
+    <!-- template tags -->
+    {%block content%} {%endblock%}
+  </body>
+</html>
