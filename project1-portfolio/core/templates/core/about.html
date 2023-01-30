@@ -1,8 +1,30 @@
 {%extends 'core/base.html' %} 
 
+{% load static %}
+
 {%block title%}About{%endblock%}
 
+{%block background%}{%  load static %}{% static 'core/img/about-bg.jpg' %}{%endblock background%}
+
+{%block headers%}
+  <div class="site-heading">
+    <h1>About</h1>
+    <span class="subheading">Lorem ipsum</span>
+  </div>
+{%endblock headers%}
+
 {%block content%}
-  <h2>About</h2>
-  <h3>Subtitle</h3>
+    <!-- Contenido Principal -->
+    <div class="container">
+      <div class="row">   
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+          <img class="img-fluid avatar" src="https://jottasistemas.com/wp-content/uploads/2022/05/New-Project-3.jpg" alt="" width="120" height="auto">
+        </div>
+        <div class="col-lg-7 col-md-8">
+          <h2 class="section-heading">J0s3 Qu1Nt3R0</h2>   
+          <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
+        </div>
+      </div>  
+    </div>
 {%endblock content%}
