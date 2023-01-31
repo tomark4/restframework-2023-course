@@ -30,13 +30,6 @@ def about(request):
   return render(request, "core/about.html")
 
 
-
-def portfolio(request):
-
-  # return HttpResponse(html_base + "<h1>Portfolio</h1>")
-  return render(request, "core/portfolio.html")
-
-
 def contact(request):
 
   # return HttpResponse(html_base + "<h1>Contact</h1>")
