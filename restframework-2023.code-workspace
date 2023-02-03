@@ -13,6 +13,7 @@
       "--load-plugins",
       "pylint_django"
     ],
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.fontSize": 14
   }
 }

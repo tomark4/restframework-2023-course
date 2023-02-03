@@ -14,8 +14,5 @@ def find_us(request):
 def contact(request):
   return render(request, 'core/contact.html')
 
-def blog(request):
-  return render(request, 'core/blog.html')
-
 def sample_page(request):
   return render(request, 'core/sample_page.html')
