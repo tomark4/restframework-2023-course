@@ -8,9 +8,6 @@ def home(request):
 def about(request):
   return render(request, 'core/about.html')
 
-def services(request):
-  return render(request, 'core/services.html')
-
 def find_us(request):
   return render(request, 'core/find_us.html')
 
