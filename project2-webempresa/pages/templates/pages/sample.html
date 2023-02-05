@@ -15,7 +15,14 @@
                   <span class="section-heading-lower">{{ page.title }}</span>
                 </h2>
                 <div class="section-content">
-                    {{ page.content }}
+                    {{ page.content|safe }}
+                    <br />
+                    {% if user.is_authenticated %}
+                    <div style="margin-top: 20px">
+                      {% comment %} Enviar al admin para editar, tambien se puede borrar o crear nuevo {% endcomment %}
+                      <a href="{% url 'admin:pages_page_change' page.id%}" target="_blank" rel="noreferrer">Edit page</a>
+                    </div>
+                    {% endif %}
                 </div>
               </div>
             </div>
