@@ -105,38 +105,52 @@
       </div>
     </nav>
 
-    {{ request.path }}
-
     {% block content %} {% endblock %}
 
     <!-- Pié de página -->
+
+    {{ twitter }}
     <footer class="footer text-faded text-center py-5">
       <div class="container">
         <p class="m-0">
-          <a href="#" class="link">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="#" class="link">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="#" class="link">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
+          {% if twitter %}
+            <a href="{{ twitter }}" class="link" target='_blank'>
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          {% endif %}
+
+          {% if facebook %}
+            <a href="{{ facebook }}" class="link">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          {% endif %}
+
+          {% if instagram %}
+            <a href="{{ instagram }}" class="link">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          {% endif %}
         </p>
+
+        {% load pages_extras %}
+        {% get_page_list as page_list %}
         <p class="m-0 mbt">
-          <a href="sample.html" class="link">Política de privacidad</a> ·
-          <a href="sample.html" class="link">Aviso legal</a> ·
-          <a href="sample.html" class="link">Cookies</a>
+          {% for page in page_list %}
+            <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{page.title}}</a> {% if not forloop.last %}·{%endif%}
+          {% endfor %}
         </p>
+
+
+
         <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
       </div>
     </footer>

@@ -6,6 +6,7 @@
 
 {% block content%}
 {% for post in posts %}
+{{ post.image }}
     <section class="page-section cta">
       <div class="container">
         <div class="row">
@@ -16,7 +17,11 @@
                 <span class="section-heading-lower">{{ post.title }}</span>
               </h2>
               <p class="mb-0">
+              {% if post.image %}
+                <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ post.image.url }}" alt="">
+              {% else %}
                 <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/img/products-01.jpg' %}" alt="">
+              {% endif %}
               </p>
               <p class="mb-0 mbt">
                {{post.content|linebreaks}}
