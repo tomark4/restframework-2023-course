@@ -19,5 +19,12 @@ class PostAdmin(admin.ModelAdmin):
 
     post_categories.short_description = "Categorias"
 
+
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.groups.filter(name="blog_admin").exists():
+            return ('created','updated','author',)
+
+        return ('created','updated')
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
