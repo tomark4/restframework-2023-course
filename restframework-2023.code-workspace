@@ -14,7 +14,7 @@
       "pylint_django"
     ],
     "editor.formatOnSave": false,
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "emmet.includeLanguages": {
       "django-html": "html"
     }
