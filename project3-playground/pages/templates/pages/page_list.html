@@ -13,10 +13,18 @@
           <h2 class="mb-4">{{page.title}}</h2>
           <div>
             <p>{{page.content|striptags|safe|truncatechars:"200"}}</p>
-            <p><a href="{% url 'pages:detail' page.id page.title|slugify %}">Read more</a>
             {% if request.user.is_staff %}
-              | <a href="{% url 'pages:update' page.id %}">Edit</a>
-              | <a href="{% url 'pages:delete' page.id %}">Delete</a>
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'pages:detail' page.id page.title|slugify %}">Read more</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'pages:update' page.id %}">Edit</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'pages:delete' page.id %}">Link</a>
+                </li>
+              </ul>
             {% endif %}
             </p>
           </div>
